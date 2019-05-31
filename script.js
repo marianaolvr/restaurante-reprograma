@@ -1,9 +1,9 @@
 const container = document.querySelector('#items-cardapio')
 fetch(`http://localhost:3000/comidas`)
-    .then((response) =>{
+    .then((response) => {
         return response.json();
     })
-    .then((data) =>{
+    .then((data) => {
 
         data.pratosFavoritos.forEach(prato => {
             console.log(prato)
@@ -18,11 +18,11 @@ fetch(`http://localhost:3000/comidas`)
                 <h5 class="mt-0"><strong>${prato.nome}</strong></h5>
                 ${prato.descricao}
               </div>`
-              container.appendChild(mediaItem);
+            container.appendChild(mediaItem);
         }
         )
     }
     )
-    .catch((erro)=>{
+    .catch((erro) => {
         console.log(erro)
     })
